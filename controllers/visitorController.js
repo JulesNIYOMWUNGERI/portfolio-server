@@ -17,7 +17,7 @@ const visitorsignin = async(req,res) => {
 
         if(!isPasswordCorrect) return res.status(400).json({ message:"Invalid credentials." });
 
-        const token = jwt.sign({ email:existingVisitor.email,id:existingVisitor._id },'portifolioKeyVisitor',{ expiresIn:"2h" });
+        const token = jwt.sign({ email:existingVisitor.email,id:existingVisitor._id },process.env.VISITOR_SCREET_KEY,{ expiresIn:"2h" });
 
         res.status(200).json({ result:existingVisitor, token })
     } catch (error) {
@@ -39,7 +39,7 @@ const visitorsignup = async(req,res) => {
 
         const result = await Visitor.create({ email,password:hashedPassword,fullname });
 
-        const token = jwt.sign({ email:result.email,id:result._id },'portifolioKeyVisitor',{ expiresIn:"2h" });
+        const token = jwt.sign({ email:result.email,id:result._id },process.env.VISITOR_SCREET_KEY,{ expiresIn:"2h" });
 
         res.status(200).json({ message:"signup successfully! now login!!!" })
     } catch (error) {

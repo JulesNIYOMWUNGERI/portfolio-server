@@ -9,7 +9,7 @@ const AdminAuth = async(req,res,next) => {
         let decodedData;
 
         if(token && isCustomAuth){
-            decodedData = jwt.verify(token,'portifolioKey');
+            decodedData = jwt.verify(token,process.env.ADMIN_SCREET_KEY);
 
             req.userId = decodedData.id; 
         }else{

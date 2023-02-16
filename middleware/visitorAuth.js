@@ -9,7 +9,7 @@ const VisitorAuth = async(req,res,next) => {
         let decodedData;
 
         if(token && isCustomAuth){
-            decodedData = jwt.verify(token,'portifolioKeyVisitor');
+            decodedData = jwt.verify(token,process.env.VISITOR_SCREET_KEY);
 
             req.visitorId = decodedData.id; 
         }else{
