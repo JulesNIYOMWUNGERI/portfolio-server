@@ -60,7 +60,7 @@ const PORT = process.env.PORT
 
 mongoose.set('strictQuery', false)
 
-mongoose.connect(process.env.MONGODB_URL)
+mongoose.connect('mongodb+srv://admin:u2ZI81uoVxa4QuoG@cluster0.nugpxce.mongodb.net/?retryWrites=true&w=majority')
 .then(()=>app.listen(PORT, () => console.log(`server is running on port:http://localhost:${PORT}`)))
 .catch((error)=>console.log(`${error} did not connect`))
 
