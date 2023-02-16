@@ -49,10 +49,6 @@ app.get('/api/welcome',(req,res) => {
     res.status(200).send({message:"welcome to the mocha and chai test API"});
 });
 
-app.use('/',(req,res) => {
-    res.status(200).send({message:"Welcome to your portfolio API"})
-})
-
 
 app.use('/blogs',BlogRouter)
 app.use('/admin',AdminRouter)
@@ -70,7 +66,6 @@ mongoose.connect(process.env.MONGODB_URL)
 
 
 module.exports = app;
-
 
 
 
