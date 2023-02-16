@@ -58,6 +58,7 @@ app.use('/comment',CommentRouter)
 
 const PORT = process.env.PORT 
 
+mongoose.set('strictQuery', false)
 
 mongoose.connect(process.env.MONGODB_URL)
 .then(()=>app.listen(PORT, () => console.log(`server is running on port:http://localhost:${PORT}`)))
