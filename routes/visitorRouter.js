@@ -51,6 +51,10 @@ router.post('/signin',visitorController.visitorsignin);
  */
 
 
+router.get('/getVisitors',AdminAuth,visitorController.getAllVisitors)
+
+router.get('/get/:id',AdminAuth,visitorController.getVisitorById)
+
 router.delete('/delete/:id',AdminAuth,visitorController.deleteVisitor)
 
 /**

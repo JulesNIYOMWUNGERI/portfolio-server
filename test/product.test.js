@@ -90,7 +90,7 @@ describe('testing API Endpoint',() => {
 
     describe('POST /blogs/add', () => {
         it('it should POST a blog',(done) => {
-            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
             const blog = {
                 title:"testing",
                 desc:"this is the testing mocha and chai",
@@ -117,7 +117,7 @@ describe('testing API Endpoint',() => {
 
 
         it('it should not POST a blog',(done) => {
-            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
             const blog = {
                 title:"testing",
                 desc:"this is the testing mocha and chai",
@@ -143,7 +143,7 @@ describe('testing API Endpoint',() => {
 
     describe('POST /blogs/like/:id', () => {
         it('it should POST like to the blog',(done) => {
-           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ2xhc3RAZ21haWwuY29tIiwiaWQiOiI2M2ViZGIzNzU4MTE5MTE3MmFhODEwNzgiLCJpYXQiOjE2NzY0MDE1MDMsImV4cCI6MTY3NjQwODcwM30.WyZ3NHFXPq49ywnxjU7WXO6pymcAcB0jnx5kSpT-984'
+           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaWQiOiI2M2VmNmIwNzBiODBjYmNiYTUwODcxNDgiLCJpYXQiOjE2NzY2NDAyMDIsImV4cCI6MTY3NjY0NzQwMn0.3zm3L1eLFqBfZObjApdAXhCAotBNfWraS9tdOBiUHgk'
            chai.request(server)
            .post('/blogs/like/63e9389b2636aabe666eabeb')
            .set({ "Authorization": `Bearer ${token}`})
@@ -166,7 +166,7 @@ describe('testing API Endpoint',() => {
 
     describe('PATCH /blogs/update/:id', () => {
         it('it should PATCH a blog',(done) => {
-            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
             const blog = {
                 title:"Development Agency33",
                 desc:"this is the testing mocha and chai",
@@ -202,7 +202,7 @@ describe('testing API Endpoint',() => {
 
     describe('DELETE /blogs/delete/:id', () => {
         it('it should DELETE a blog',(done) => {
-           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
            chai.request(server)
            .delete('/blogs/delete/63e94e5e3f1b2c2f2649c9ae')
            .set({ "Authorization": `Bearer ${token}`})
@@ -226,7 +226,7 @@ describe('testing API Endpoint',() => {
 
     describe('POST /comment/add/:id', () => {
         it('it should POST a comment in mongoDB',(done) => {
-           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ2xhc3RAZ21haWwuY29tIiwiaWQiOiI2M2ViZGIzNzU4MTE5MTE3MmFhODEwNzgiLCJpYXQiOjE2NzY0MDE1MDMsImV4cCI6MTY3NjQwODcwM30.WyZ3NHFXPq49ywnxjU7WXO6pymcAcB0jnx5kSpT-984'
+           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaWQiOiI2M2VmNmIwNzBiODBjYmNiYTUwODcxNDgiLCJpYXQiOjE2NzY2NDAyMDIsImV4cCI6MTY3NjY0NzQwMn0.3zm3L1eLFqBfZObjApdAXhCAotBNfWraS9tdOBiUHgk'
            const blog = {
                commentValue:"Test comment on Development Agency33",
             }
@@ -271,7 +271,7 @@ describe('testing API Endpoint',() => {
 
     describe('GET /comment/getall', () => {
         it('it should GET all comments',(done) => {
-           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
            chai.request(server)
            .get('/comment/getall')
            .set({ "Authorization": `Bearer ${token}`})
@@ -294,7 +294,7 @@ describe('testing API Endpoint',() => {
 
     describe('DELETE /comment/delete/:id', () => {
         it('it should DELETE a comment',(done) => {
-           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
            chai.request(server)
            .delete('/comment/delete/63e94e603f1b2c2f2649c9b3')
            .set({ "Authorization": `Bearer ${token}`})
@@ -341,8 +341,8 @@ describe('testing API Endpoint',() => {
     describe('POST /admin/signin', () => {
         it('it should POST an admin and signin',(done) => {
             const admin = {
-                email:"string@gmail.com",
-                password:"string"
+                email:"julesniyomwungeri144@gmail.com",
+                password:"jules"
              }
              chai.request(server)
              .post('/admin/signin')
@@ -364,12 +364,12 @@ describe('testing API Endpoint',() => {
 
     describe('PUT /admin/update/:id', () => {
         it('it should PUT an admin',(done) => {
-            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
             const admin = {
                 img:"asdfghjkzxcvnm.jpg"
              }
              chai.request(server)
-            .put('/admin/update/63e94f7500a5c43198ba0dfc')
+            .put('/admin/update/63ef34a905812a7ae957bc27')
             .set({ "Authorization": `Bearer ${token}`})
             .send(admin)
             .end((err,res) => {
@@ -396,7 +396,7 @@ describe('testing API Endpoint',() => {
             it('it should POST a visitor',(done) => {
                 const visitor = {
                     fullname:"test jack",
-                    email:"jack088888@gmail.com",
+                    email:"jack0888888@gmail.com",
                     password:"jules",
                     comfirmPassword:"jules"
                 }
@@ -442,7 +442,7 @@ describe('testing API Endpoint',() => {
 
     describe('DELETE /visitor/delete/:id', () => {
         it('it should DELETE a visitor',(done) => {
-           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZ0BnbWFpbC5jb20iLCJpZCI6IjYzZWI4YTZhNzhhMTYwZTc4N2NmMjEyMiIsImlhdCI6MTY3NjQwMTY1NywiZXhwIjoxNjc2NDA4ODU3fQ.Vti7GbZhKKkSZjHsry2yPr97-dKKlYqpPZoqTL5eGDw'
+           let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGVzbml5b213dW5nZXJpMTQ0QGdtYWlsLmNvbSIsImlkIjoiNjNlZjM0YTkwNTgxMmE3YWU5NTdiYzI3IiwiaWF0IjoxNjc2NjM5ODA1LCJleHAiOjE2NzY2NDcwMDV9.q2GGLPBRJs3jeCOmTb8kLvNQauMcxTsZT_zcmpAgr5U'
            chai.request(server)
            .delete('/visitor/delete/63e951f491d81bbdb72a11e6')
            .set({ "Authorization": `Bearer ${token}`})

@@ -17,7 +17,7 @@ const signIn = async(req,res) => {
 
         if(!isPasswordCorrect) return res.status(400).json({ message:"Invalid credentials." });
 
-        const token = jwt.sign({ email:existingAdmin.email,id:existingAdmin._id },process.env.ADMIN_SCREET_KEY,{ expiresIn:"2h" });
+        const token = jwt.sign({ email:existingAdmin.email,id:existingAdmin._id },process.env.ADMIN_SCREET_KEY);
 
         res.status(200).json({ result:existingAdmin, token })
     } catch (error) {
@@ -27,7 +27,10 @@ const signIn = async(req,res) => {
 
 const signUp = async(req,res) => {
     const { fullname,email,password,comfirmPassword } = req.body;
-
+    console.log(fullname)
+    console.log(email)
+    console.log(password)
+    console.log(comfirmPassword)
     try {
         const oneAdmin = await Admin.find();
 

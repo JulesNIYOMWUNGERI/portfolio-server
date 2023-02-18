@@ -17,7 +17,7 @@ const visitorsignin = async(req,res) => {
 
         if(!isPasswordCorrect) return res.status(400).json({ message:"Invalid credentials." });
 
-        const token = jwt.sign({ email:existingVisitor.email,id:existingVisitor._id },process.env.VISITOR_SCREET_KEY,{ expiresIn:"2h" });
+        const token = jwt.sign({ email:existingVisitor.email,id:existingVisitor._id },process.env.VISITOR_SCREET_KEY);
 
         res.status(200).json({ result:existingVisitor, token })
     } catch (error) {
@@ -48,6 +48,31 @@ const visitorsignup = async(req,res) => {
 }
 
 
+const getAllVisitors = async(req,res) => {
+    try{
+        const visitors = await Visitor.find();
+
+
+        res.status(200).json(visitors)
+    }catch (error){
+        res.status(404).json({ message:error.message})
+    }
+}
+
+
+const getVisitorById = async(req,res) => {
+    const { id }= req.params;
+
+    try {
+        const visitor = await Visitor.findById(id);
+
+        res.status(200).json(visitor)
+    } catch (error) {
+        res.status(404).json({ message:"There is no visitor with such id" })
+    }
+}
+
+
 const deleteVisitor = async(req,res) => {
     const { id } = req.params;
 
@@ -63,4 +88,6 @@ const deleteVisitor = async(req,res) => {
 
 exports.visitorsignin = visitorsignin;
 exports.visitorsignup = visitorsignup;
+exports.getAllVisitors = getAllVisitors;
+exports.getVisitorById = getVisitorById;
 exports.deleteVisitor = deleteVisitor;
