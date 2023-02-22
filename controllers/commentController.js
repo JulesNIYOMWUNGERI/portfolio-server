@@ -12,7 +12,7 @@ const addComment = async(req,res) => {
     try {
         const savedComment = await newComment.save();
 
-        res.status(200).json(savedComment)
+        res.status(200).json({message:"successfully commented on this blog!"})
     } catch (error) {
         res.status(409).json({ message:error.message })
     }
